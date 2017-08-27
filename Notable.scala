@@ -1,7 +1,7 @@
 package fuzzy
 
 trait Invertable[A] {
-	type ¬[A]
+  type ¬[A]
 
-	def invert(a: A): ¬[A]
+  def invert(a: A): ¬[A]
 }
