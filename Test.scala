@@ -11,18 +11,18 @@ object Test {
 	type W = White.type
 	type B = Black.type
 
-	implicit val whiteNot = new Notable[W] {
+	implicit val whiteNot = new Invertable[W] {
 		type ¬[W] = B
-		def not(white: W): ¬[W] = Black
+		def invert(white: W): ¬[W] = Black
 	}
 
-	implicit val blackNot = new Notable[B] {
+	implicit val blackNot = new Invertable[B] {
 		type ¬[B] = W
-		def not(black: B): ¬[B] = White
+		def invert(black: B): ¬[B] = White
 	}
 
-	val white: White.type = Logic.inverter(Black)
-	val black: Black.type = Logic.inverter(White)
+	val white: White.type = Logic.not(Black)
+	val black: Black.type = Logic.not(White)
 
 	// won't compile
 	//val black: Black.type = Logic.inverter(Black)

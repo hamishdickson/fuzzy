@@ -1,9 +1,7 @@
 package fuzzy
 
-trait Notable[A] {
+trait Invertable[A] {
 	type ¬[A]
 
-	def not(a: A): ¬[A]
-
-	def unchanged = this
+	def invert(a: A): ¬[A]
 }
