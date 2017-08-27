@@ -1,5 +1,9 @@
 package fuzzy
 
-trait Notable[F[_]] {
-	def not[T](f: F[T]): F[T]
+trait Notable[A] {
+	type ¬[A]
+
+	def not(a: A): ¬[A]
+
+	def unchanged = this
 }

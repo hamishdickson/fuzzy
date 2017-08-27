@@ -13,7 +13,4 @@ object QState {
 
 	// can I make a monoid?
 	// this might be a semigroupK
-	implicit def qstateSemigroup[T] = new Semigroup[QState[T]] {
-		def combine(s1: QState[T], s2: QState[T]): QState[T] = ???
-	}
 }
